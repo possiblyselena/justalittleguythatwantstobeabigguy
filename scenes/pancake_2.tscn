@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cyfstcv1kjg5a"]
+
+[ext_resource type="Texture2D" uid="uid://cgaiinlfqsuqx" path="res://assets/pancake2.png" id="1_cqwyw"]
+
+[node name="pancake2" type="RigidBody2D" unique_id=1298656431]
+
+[node name="Pancake2" type="Sprite2D" parent="." unique_id=51385040]
+position = Vector2(515, 167)
+texture = ExtResource("1_cqwyw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1268958207]
+position = Vector2(515, 167)
+polygon = PackedVector2Array(-6, -13, -24, -11, -32, 1, -32, 20, -28, 24, -20, 25, -8, 28, 11, 25, 25, 23, 36, 15, 38, 9, 32, -7, 19, -12, 14, -13, -2, -14)
