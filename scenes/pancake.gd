@@ -10,4 +10,7 @@ func _on_body_entered(body: Node) -> void:
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var screen_height := get_viewport_rect().size.y
+	if global_position.y > screen_height + 50:
+		get_tree().current_scene.pancake_missed()
+		queue_free()

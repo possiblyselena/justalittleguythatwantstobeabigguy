@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://crpwx1ljj6pct" path="res://scripts/gameplay.gd" id="1_ocj2s"]
 [ext_resource type="Texture2D" uid="uid://claqjdh6ois7e" path="res://assets/plate.png" id="2_din8e"]
 [ext_resource type="Script" uid="uid://ic47jdkod283" path="res://scripts/plate.gd" id="3_4bh5q"]
-[ext_resource type="Texture2D" uid="uid://cxxnaagdrrk11" path="res://assets/uncolouredx.png" id="4_101mb"]
 [ext_resource type="Script" uid="uid://b57c6nuw8hv8u" path="res://scripts/pancake_spawner.gd" id="4_e124b"]
-[ext_resource type="Script" uid="uid://b4xclpygvarpl" path="res://scenes/container.gd" id="4_hbo4f"]
 [ext_resource type="PackedScene" uid="uid://bux2rwgjgt2f4" path="res://scenes/pancake_1.tscn" id="5_4bh5q"]
 [ext_resource type="AudioStream" uid="uid://li0u16atholw" path="res://assets/who is that.wav" id="5_101mb"]
 [ext_resource type="PackedScene" uid="uid://cyfstcv1kjg5a" path="res://scenes/pancake_2.tscn" id="6_e124b"]
 [ext_resource type="FontFile" uid="uid://vsgtdowvxosa" path="res://assets/augiepixel.ttf" id="10_ctvyo"]
+[ext_resource type="PackedScene" uid="uid://cb6rd44bhd1bw" path="res://scenes/3lives.tscn" id="10_qixtg"]
+[ext_resource type="PackedScene" uid="uid://g350l1bmnhuv" path="res://scenes/2lives.tscn" id="11_nt65e"]
 [ext_resource type="Script" uid="uid://6iftvr4o2jt1" path="res://scenes/counter.gd" id="11_qixtg"]
+[ext_resource type="PackedScene" uid="uid://4pwclhauq8ah" path="res://scenes/1lives.tscn" id="12_bhmdk"]
 
 [node name="gameplay" type="Node2D" unique_id=503338620]
 script = ExtResource("1_ocj2s")
@@ -39,27 +40,6 @@ position = Vector2(-0.73306274, 0)
 scale = Vector2(1.0346886, 0.9999998)
 polygon = PackedVector2Array(-3.7243958, 6.549103, -22.253616, 8.060425, -33.892, 17.128448, -32.774673, 25.692657, -25.698318, 33.24933, -13.780258, 37.783356, 2.607071, 39.294678, 13.407822, 39.798462, 24.953445, 37.783356, 35.75418, 35.264465, 43.202988, 26.700226, 43.94786, 17.632202, 40.5959, 12.090668, 31.657349, 8.060425, 17.504654, 7.052887)
 
-[node name="Container" type="Container" parent="." unique_id=227149037]
-offset_left = 1087.0
-offset_top = 609.0
-offset_right = 1151.0
-offset_bottom = 659.0
-script = ExtResource("4_hbo4f")
-
-[node name="uncoloredx1" type="Sprite2D" parent="Container" unique_id=1987966572]
-scale = Vector2(0.5, 0.41)
-texture = ExtResource("4_101mb")
-
-[node name="uncoloredx2" type="Sprite2D" parent="Container" unique_id=1797116889]
-position = Vector2(-50.812504, -1.6212463e-05)
-scale = Vector2(0.4837501, 0.39405003)
-texture = ExtResource("4_101mb")
-
-[node name="uncoloredx3" type="Sprite2D" parent="Container" unique_id=109252676]
-position = Vector2(-100, 0)
-scale = Vector2(0.4735033, 0.39881903)
-texture = ExtResource("4_101mb")
-
 [node name="pancake spawner" type="Node2D" parent="." unique_id=265108325]
 script = ExtResource("4_e124b")
 pancakes = Array[PackedScene]([ExtResource("5_4bh5q"), ExtResource("6_e124b")])
@@ -77,3 +57,9 @@ theme_override_fonts/font = ExtResource("10_ctvyo")
 theme_override_font_sizes/font_size = 30
 text = "number of pancakes eaten"
 script = ExtResource("11_qixtg")
+
+[node name="3lives" parent="." unique_id=1233530440 instance=ExtResource("10_qixtg")]
+
+[node name="2lives" parent="." unique_id=52018403 instance=ExtResource("11_nt65e")]
+
+[node name="1life" parent="." unique_id=1187682981 instance=ExtResource("12_bhmdk")]

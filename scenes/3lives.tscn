@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cb6rd44bhd1bw"]
+
+[ext_resource type="Texture2D" uid="uid://cxxnaagdrrk11" path="res://assets/uncolouredx.png" id="1_8ithp"]
+
+[node name="Node2D" type="Node2D" unique_id=1233530440]
+
+[node name="Uncolouredx" type="Sprite2D" parent="." unique_id=1019430180]
+position = Vector2(833, 583)
+texture = ExtResource("1_8ithp")
+
+[node name="Uncolouredx2" type="Sprite2D" parent="." unique_id=1854651111]
+position = Vector2(958, 582)
+texture = ExtResource("1_8ithp")
+
+[node name="Uncolouredx3" type="Sprite2D" parent="." unique_id=1152079880]
+position = Vector2(1084, 581)
+texture = ExtResource("1_8ithp")
