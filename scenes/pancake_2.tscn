@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cyfstcv1kjg5a"]
 
+[ext_resource type="Script" uid="uid://hm7ny0qj8f4n" path="res://scenes/pancake.gd" id="1_04qon"]
 [ext_resource type="Texture2D" uid="uid://cgaiinlfqsuqx" path="res://assets/pancake2.png" id="1_cqwyw"]
 
 [node name="pancake2" type="RigidBody2D" unique_id=1298656431]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_04qon")
 
 [node name="Pancake2" type="Sprite2D" parent="." unique_id=51385040]
 position = Vector2(543.5, 155)
