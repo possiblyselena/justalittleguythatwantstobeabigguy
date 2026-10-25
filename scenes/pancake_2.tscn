@@ -5,9 +5,11 @@
 [node name="pancake2" type="RigidBody2D" unique_id=1298656431]
 
 [node name="Pancake2" type="Sprite2D" parent="." unique_id=51385040]
-position = Vector2(515, 167)
+position = Vector2(543.5, 155)
+scale = Vector2(1.57, 1.24)
 texture = ExtResource("1_cqwyw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1268958207]
-position = Vector2(515, 167)
-polygon = PackedVector2Array(-6, -13, -24, -11, -32, 1, -32, 20, -28, 24, -20, 25, -8, 28, 11, 25, 25, 23, 36, 15, 38, 9, 32, -7, 19, -12, 14, -13, -2, -14)
+position = Vector2(544, 150.289)
+scale = Vector2(1.5625, 1.2589287)
+polygon = PackedVector2Array(-6.6400146, -9.665024, -24.640015, -7.665024, -32.640015, 4.334976, -32.640015, 23.334976, -28.640015, 27.334976, -20.640015, 28.334976, -8.640015, 31.334976, 10.359985, 28.334976, 24.359985, 26.334976, 35.359985, 18.334976, 37.359985, 12.334976, 31.359985, -3.6650238, 18.359985, -8.665024, 13.359985, -9.665024, -2.6400146, -10.665024)

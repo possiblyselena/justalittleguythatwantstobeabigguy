@@ -1,18 +1,22 @@
 [gd_scene format=3 uid="uid://cktvsg8uoqebw"]
 
-[ext_resource type="Script" uid="uid://crpwx1ljj6pct" path="res://gameplay.gd" id="1_ocj2s"]
+[ext_resource type="Script" uid="uid://crpwx1ljj6pct" path="res://scripts/gameplay.gd" id="1_ocj2s"]
 [ext_resource type="Texture2D" uid="uid://claqjdh6ois7e" path="res://assets/plate.png" id="2_din8e"]
-[ext_resource type="Script" uid="uid://ic47jdkod283" path="res://plate.gd" id="3_4bh5q"]
-[ext_resource type="Script" uid="uid://b57c6nuw8hv8u" path="res://pancake_spawner.gd" id="4_e124b"]
+[ext_resource type="Script" uid="uid://ic47jdkod283" path="res://scripts/plate.gd" id="3_4bh5q"]
+[ext_resource type="Texture2D" uid="uid://cxxnaagdrrk11" path="res://assets/uncolouredx.png" id="4_101mb"]
+[ext_resource type="Script" uid="uid://b57c6nuw8hv8u" path="res://scripts/pancake_spawner.gd" id="4_e124b"]
+[ext_resource type="Script" uid="uid://b4xclpygvarpl" path="res://scenes/container.gd" id="4_hbo4f"]
 [ext_resource type="PackedScene" uid="uid://bux2rwgjgt2f4" path="res://scenes/pancake_1.tscn" id="5_4bh5q"]
 [ext_resource type="AudioStream" uid="uid://li0u16atholw" path="res://assets/who is that.wav" id="5_101mb"]
 [ext_resource type="PackedScene" uid="uid://cyfstcv1kjg5a" path="res://scenes/pancake_2.tscn" id="6_e124b"]
+[ext_resource type="FontFile" uid="uid://vsgtdowvxosa" path="res://assets/augiepixel.ttf" id="10_ctvyo"]
+[ext_resource type="Script" uid="uid://6iftvr4o2jt1" path="res://scenes/counter.gd" id="11_qixtg"]
 
 [node name="gameplay" type="Node2D" unique_id=503338620]
 script = ExtResource("1_ocj2s")
 
 [node name="bg color" type="Polygon2D" parent="." unique_id=1953233924]
-position = Vector2(-23, -8125.2583)
+position = Vector2(-28, -8115)
 scale = Vector2(1, 13.104863)
 polygon = PackedVector2Array(23, 19, 18, 670, 1205, 670.4578, 1183, 12)
 
@@ -20,18 +24,41 @@ polygon = PackedVector2Array(23, 19, 18, 670, 1205, 670.4578, 1183, 12)
 position = Vector2(584, 547.00006)
 scale = Vector2(2.685, 1.9850001)
 
-[node name="Plate" type="Sprite2D" parent="." unique_id=86775977]
+[node name="plate" type="AnimatableBody2D" parent="." unique_id=700690806]
 position = Vector2(584, 547.00006)
 scale = Vector2(2.685, 1.9850001)
-texture = ExtResource("2_din8e")
+sync_to_physics = false
 script = ExtResource("3_4bh5q")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plate" unique_id=581041413]
+[node name="Plate" type="Sprite2D" parent="plate" unique_id=86775977]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_din8e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="plate" unique_id=581041413]
 position = Vector2(-0.73306274, 0)
-scale = Vector2(1.0346887, 0.99999994)
+scale = Vector2(1.0346886, 0.9999998)
 polygon = PackedVector2Array(-3.7243958, 6.549103, -22.253616, 8.060425, -33.892, 17.128448, -32.774673, 25.692657, -25.698318, 33.24933, -13.780258, 37.783356, 2.607071, 39.294678, 13.407822, 39.798462, 24.953445, 37.783356, 35.75418, 35.264465, 43.202988, 26.700226, 43.94786, 17.632202, 40.5959, 12.090668, 31.657349, 8.060425, 17.504654, 7.052887)
 
-[node name="lives" type="Node2D" parent="." unique_id=2143193946]
+[node name="Container" type="Container" parent="." unique_id=227149037]
+offset_left = 1087.0
+offset_top = 609.0
+offset_right = 1151.0
+offset_bottom = 659.0
+script = ExtResource("4_hbo4f")
+
+[node name="uncoloredx1" type="Sprite2D" parent="Container" unique_id=1987966572]
+scale = Vector2(0.5, 0.41)
+texture = ExtResource("4_101mb")
+
+[node name="uncoloredx2" type="Sprite2D" parent="Container" unique_id=1797116889]
+position = Vector2(-50.812504, -1.6212463e-05)
+scale = Vector2(0.4837501, 0.39405003)
+texture = ExtResource("4_101mb")
+
+[node name="uncoloredx3" type="Sprite2D" parent="Container" unique_id=109252676]
+position = Vector2(-100, 0)
+scale = Vector2(0.4735033, 0.39881903)
+texture = ExtResource("4_101mb")
 
 [node name="pancake spawner" type="Node2D" parent="." unique_id=265108325]
 script = ExtResource("4_e124b")
@@ -39,3 +66,13 @@ pancakes = Array[PackedScene]([ExtResource("5_4bh5q"), ExtResource("6_e124b")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=701534966]
 stream = ExtResource("5_101mb")
+
+[node name="Label" type="Label" parent="." unique_id=1900724841]
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 181.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_ctvyo")
+text = "number of pancakes eaten"
+script = ExtResource("11_qixtg")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dtnyaej6r1u3w"]
+
+[ext_resource type="FontFile" uid="uid://vsgtdowvxosa" path="res://assets/augiepixel.ttf" id="1_t0w7d"]
+[ext_resource type="Texture2D" uid="uid://esjpqcf1dgf" path="res://assets/fork.png" id="2_paav1"]
+
+[node name="thumbnail" type="Node2D" unique_id=786470790]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1774209889]
+position = Vector2(-25.310902, -55.386642)
+scale = Vector2(1.1004739, 1.168717)
+polygon = PackedVector2Array(23, 32, 28, 595, 1078, 595, 1073.0303, 393.02145, 1070.7155, 298.93552, 1064, 26)
+
+[node name="Label" type="Label" parent="." unique_id=1617806360]
+offset_left = 204.0
+offset_top = 379.0
+offset_right = 973.0
+offset_bottom = 518.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_t0w7d")
+theme_override_font_sizes/font_size = 50
+text = "I'm just a little guy 
+that wants to be a big guy"
+horizontal_alignment = 1
+
+[node name="Fork" type="Sprite2D" parent="." unique_id=1738671483]
+position = Vector2(576, 265)
+scale = Vector2(3.1500008, 2.4999998)
+texture = ExtResource("2_paav1")
