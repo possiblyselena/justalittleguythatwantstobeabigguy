@@ -1,5 +1,76 @@
 [gd_scene format=3 uid="uid://c4vf1rq2pe8xf"]
 
+[ext_resource type="Script" uid="uid://hfu8lh2g1kik" path="res://scenes/endscreen.gd" id="1_7s65u"]
+[ext_resource type="Texture2D" uid="uid://dpvpeaibxau0k" path="res://assets/guy.png" id="1_dt0yg"]
+[ext_resource type="Texture2D" uid="uid://cqcoh3eo1jmpj" path="res://assets/button.png" id="2_cuen1"]
+[ext_resource type="FontFile" uid="uid://vsgtdowvxosa" path="res://assets/augiepixel.ttf" id="4_jev7x"]
+
 [node name="Node2D" type="Node2D" unique_id=1719169221]
+script = ExtResource("1_7s65u")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=512851048]
+position = Vector2(-25, 17)
+polygon = PackedVector2Array(16, -26, 12, 641, 1190, 660, 1198, -23)
+
+[node name="Guy" type="Sprite2D" parent="." unique_id=1293430915]
+position = Vector2(563.00006, 308)
+scale = Vector2(4.8799996, 4.8200006)
+texture = ExtResource("1_dt0yg")
+
+[node name="playagain" type="Node2D" parent="." unique_id=1639510282]
+position = Vector2(307, 502)
+
+[node name="playagain" type="TextureButton" parent="playagain" unique_id=1157739700]
+offset_right = 239.0
+offset_bottom = 198.0
+texture_normal = ExtResource("2_cuen1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="playagain" unique_id=408370362]
+offset_left = 58.0
+offset_top = 79.0
+offset_right = 190.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jev7x")
+theme_override_font_sizes/font_size = 30
+text = "play again
+"
+
+[node name="mainmenu" type="Node2D" parent="." unique_id=906170100]
+position = Vector2(562, 503)
+
+[node name="mainmenu" type="TextureButton" parent="mainmenu" unique_id=123366415]
+offset_right = 239.0
+offset_bottom = 198.0
+texture_normal = ExtResource("2_cuen1")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="mainmenu" unique_id=630089070]
+offset_left = 58.0
+offset_top = 79.0
+offset_right = 190.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jev7x")
+theme_override_font_sizes/font_size = 30
+text = "main menu
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="." unique_id=783213171]
+offset_left = 360.0
+offset_top = 56.0
+offset_right = 766.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jev7x")
+theme_override_font_sizes/font_size = 50
+text = "hello"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="playagain/playagain" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="mainmenu/mainmenu" to="." method="_on_mainmenu_pressed"]

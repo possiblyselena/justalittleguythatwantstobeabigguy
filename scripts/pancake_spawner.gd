@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var pancakes: Array[PackedScene] = []
-@export var spawn_delay := 1.0
+@export var spawn_delay := 0.7
 @export var edge_margin := 50.0
 
 func _ready() -> void:

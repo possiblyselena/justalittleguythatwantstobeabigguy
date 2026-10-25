@@ -46,6 +46,7 @@ pancakes = Array[PackedScene]([ExtResource("5_4bh5q"), ExtResource("6_e124b")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=701534966]
 stream = ExtResource("5_101mb")
+volume_db = 24.0
 
 [node name="counter" type="Label" parent="." unique_id=1900724841]
 offset_left = 7.0

@@ -30,4 +30,5 @@ func pancake_missed() -> void:
 		$"1life".show()
 		
 	if lives <= 0:
+		Global.final_score = score
 		get_tree().change_scene_to_file("res://scenes/endscreen.tscn")
